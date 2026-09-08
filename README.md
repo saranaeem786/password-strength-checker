@@ -2,7 +2,7 @@
 
 
 
-A Python tool that checks password strength and cross-references real data breach records.
+A Python tool that checks password strength and cross-references real data breach records — available both as a command-line script and a simple web app.
 
 
 
@@ -20,11 +20,23 @@ A Python tool that checks password strength and cross-references real data breac
 
 
 
-python checker.py
+Command line version:
 
 
 
-This tests three example passwords and prints the strength rating, improvement suggestions, and breach status for each.
+&#x20;   python checker.py
+
+
+
+Web version (with a simple interface):
+
+
+
+&#x20;   python app.py
+
+
+
+Then open http://127.0.0.1:5000 in your browser to check a password through a webpage instead of the terminal.
 
 
 
@@ -32,11 +44,11 @@ This tests three example passwords and prints the strength rating, improvement s
 
 
 
-\--- Checking: P@ssw0rd!2024 ---
+&#x20;   --- Checking: P@ssw0rd!2024 ---
 
-VERDICT: STRONG
+&#x20;   Strength: STRONG
 
-Breach check: FOUND in 1031 known data breaches!
+&#x20;   Breach check: FOUND in 1031 known data breaches!
 
 
 
@@ -52,7 +64,7 @@ A password can look complex and still be unsafe if it's been leaked in a real br
 
 
 
-Built to demonstrate practical application of secure coding principles (never transmitting a full password) and real-world threat data, as part of my transition into cyber security following my HNC Cyber Security qualification.
+Built to demonstrate practical application of secure coding principles (never transmitting a full password) and real-world threat data, as part of my transition into cyber security following my HNC Cyber Security qualification. Later extended with a Flask web interface to demonstrate how this logic could be integrated into a real website's signup process.
 
 
 
@@ -60,9 +72,9 @@ Built to demonstrate practical application of secure coding principles (never tr
 
 
 
-\- Add a simple web interface
-
 \- Check multiple passwords from a file at once
 
 \- Add password generation suggestions
+
+\- Deploy the web version online (currently runs locally only)
 
