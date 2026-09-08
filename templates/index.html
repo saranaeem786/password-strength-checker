@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength & Breach Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        h1 { color: #333; }
+        input[type=password] { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; background: #2c7be5; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .weak { background: #fde2e2; color: #a94442; }
+        .medium { background: #fff3cd; color: #8a6d3b; }
+        .strong { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+    <h1>Password Strength & Breach Checker</h1>
+    <form method="POST">
+        <input type="password" name="password" placeholder="Enter a password to check" required>
+        <button type="submit">Check Password</button>
+    </form>
+
+    {% if strength %}
+    <div class="result {{ strength|lower }}">
+        <strong>Strength: {{ strength }}</strong>
+        {% if feedback %}
+            <ul>
+            {% for f in feedback %}
+                <li>{{ f }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        <p><strong>Breach check:</strong> {{ breach_result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
